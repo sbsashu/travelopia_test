@@ -12,9 +12,6 @@ const TravelForm = () => {
         noofperson: '',
         currency: ''
     })
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
-
     const { 
         name,
         email,
@@ -45,7 +42,7 @@ const TravelForm = () => {
                     toast.success("Traveller detail success fully added")
             })
             .catch(err => {
-                if(err.response.status == 302) {
+                if(err.response.status === 302) {
                     toast.error("Email already used")
                 } else {
                     toast.error("Somthing went wrong")
